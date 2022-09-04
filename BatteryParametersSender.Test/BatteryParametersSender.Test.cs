@@ -9,9 +9,9 @@ namespace BatteryParametersSender.Test
     [Fact]
     public void TestBatteryParams()
     {
-      if(Assert.True(BatteryDataSender.PrintData(a)=="1"))
+      if(Assert.True(BatteryDataSender.printData(a)=="1"))
          Console.WriteLine(1);
-       else if(Assert.True(BatteryDataSender.PrintData(a)=="2"))
+       else if(Assert.True(BatteryDataSender.printData(a)=="2"))
           Console.WriteLine(2);
     }
     
