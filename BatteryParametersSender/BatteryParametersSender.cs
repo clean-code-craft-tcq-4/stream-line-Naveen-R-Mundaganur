@@ -6,7 +6,7 @@ namespace BatteryParametersSender
   public class BatteryDataSender
   {
     int[] arr=new int[2];
-      public string PrintData(arr)
+      public string printData(arr)
       {
         for(int i=0;i<arr.Length;i++)
         {
