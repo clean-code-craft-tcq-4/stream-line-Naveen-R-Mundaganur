@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\TypewiseAlert\TypewiseAlert.csproj" />
+    <ProjectReference Include="..\BatteryParametersSender\BatteryParametersSender.csproj" />
   </ItemGroup>
 
 </Project>
