@@ -5,6 +5,10 @@ namespace BatteryParametersSender
 {
   public class StateOfCharge
   {
+    public StateOfCharge()
+    {
+      BatteryDataSender batterysender=new BatteryDataSender();
+    }
     public static List<int> GenerateStateOfCharge(int state_of_charge_readings_length, int soc_minimum, int soc_maximum)
     {
             List<int> soc_data = new List<int>();
