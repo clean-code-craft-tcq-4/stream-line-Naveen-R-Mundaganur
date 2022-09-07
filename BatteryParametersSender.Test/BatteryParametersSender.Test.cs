@@ -32,10 +32,19 @@ namespace BatteryParametersSender.Test
     [Fact]
     public void CheckEmptyData()
     {
-      List<int> temp_range=new List<int>();
+      List<int> temp_range=null;
       List<int> soc_range=new List<int>(){2,4,6,8};
       bool result=BatteryDataSender.IsBatteryParametersEmpty(temp_range,soc_range);
       Assert.False(result); 
+    }
+    
+    [Fact]
+    public void ValidateBatteryParameters()
+    {
+      List<int> temp_range=new List<int>{1,2,3,4,5};
+      List<int> soc_range=new List<int>(){2,4,6,8};
+      bool result=BatteryDataSender.IsBatteryParametersEmpty(temp_range,soc_range);
+      Assert.True(result); 
     }
     
     [Fact]
