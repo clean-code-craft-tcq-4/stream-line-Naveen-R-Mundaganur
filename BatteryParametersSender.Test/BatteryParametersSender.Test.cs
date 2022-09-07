@@ -55,6 +55,7 @@ namespace BatteryParametersSender.Test
       Assert.Null(sample_info);
     }
     
+    [Fact]
     public void ValidateStateOfChargeSampleParametersforZeroLength()
     {
       List<int> sample_info=new List<int>();
