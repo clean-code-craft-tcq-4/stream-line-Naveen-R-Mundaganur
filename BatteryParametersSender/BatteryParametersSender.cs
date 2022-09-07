@@ -4,17 +4,21 @@ using System.Linq;
 namespace BatteryParametersSender
 {
   public class BatteryDataSender
-  {
-    int[] arr=new int[2];
-      public static int printData(int x)
-      {
-        return x;
-        /*for(int i=0;i<arr.Length;i++)
+  {    
+      public static bool DisplayDataToConsole()
         {
-          return arr[i].ToString();
-        }*/
-        //Console.WriteLine("Welcome to BMS Streamer");
-        //Console.WriteLine("25");
-      }
+            bool isDataPrintable = false;
+            List<int> temperature_data = new List<int>();
+            List<int> soc_data = new List<int>();
+            temperature_data = TemperatureData.GenerateTemperatures(READING_MAX, TEMP_MIN, TEMP_MAX);
+            soc_data = SOCData.GenerateStateOfCharge(READING_MAX, SOC_MIN, SOC_MAX);
+            if(temperature_data.Count== READING_MAX && soc_data.Count== READING_MAX)
+            {
+                for(int index=0;index< READING_MAX;index++)
+                    Console.WriteLine($"{ temperature_data[index].ToString()},{soc_data[index].ToString()}");
+                isDataPrintable = true;
+            }
+            return isDataPrintable;
+        }
   }  
 }
