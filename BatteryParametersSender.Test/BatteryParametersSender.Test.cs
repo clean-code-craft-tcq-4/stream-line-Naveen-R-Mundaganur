@@ -11,10 +11,10 @@ namespace BatteryParametersSender.Test
     public void TestBatteryParams()
     {
       bool result=BatteryDataSender.GatherBatteryTelemetryDetails();
-      Assert.Equal(true,result);
+      Assert.True(result);
       
-      int result=BatteryDataSender.GenerateRandomNumber(1,1);
-      Assert.Equal(1,result);
+      int result1=BatteryDataSender.GenerateRandomNumber(1,1);
+      Assert.Equal(1,result1);
     }
     
   }
