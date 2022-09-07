@@ -5,6 +5,10 @@ namespace BatteryParametersSender
 {
   public class TemperatureData
   {
+    public TemperatureData()
+    {
+      BatteryDataSender batterysender=new BatteryDataSender();
+    }
       public static List<int> GenerateTemperatures(int temperature_readings_length, int temperature_minimum, int temperature_maximum)
         {
             List<int> temperature_data = new List<int>();
