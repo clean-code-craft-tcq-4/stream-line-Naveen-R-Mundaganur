@@ -13,7 +13,7 @@ namespace BatteryParametersSender
       public const int READING_MAX = 50;
     
       private List<int> temperature_data=null;
-      private List<int> soc_data =- null;
+      private List<int> soc_data = null;
       private bool isDataPrintable = false;
       
       
