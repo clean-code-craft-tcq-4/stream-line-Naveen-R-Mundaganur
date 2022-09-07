@@ -20,7 +20,7 @@ namespace BatteryParametersSender.Test
       List<int> temp_range=new List<int>(){1,2,3,4,5};
       List<int> soc_range=new List<int>(){2,4,6,8};
       bool result3=BatteryDataSender.DisplayBatteryTelemetryDetails(temp_range,soc_range);
-      Assert.True(result3);
+      Assert.False(result3);
     }
     
   }
