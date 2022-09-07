@@ -63,9 +63,9 @@ namespace BatteryParametersSender
       
       public static List<int> GenerateTemperatures(int temperature_readings_length, int temperature_minimum, int temperature_maximum)
       {
+          List<int> temperature_samples = new List<int>();
             if (temperature_readings_length>0)
             {
-              List<int> temperature_samples = new List<int>();
               for(int temp_index=0;temp_index< temperature_readings_length; temp_index++)
               {
                   temperature_samples.Add(GenerateRandomNumber(temperature_minimum, temperature_maximum));
@@ -81,18 +81,18 @@ namespace BatteryParametersSender
       }
       public static List<int> GenerateStateOfCharge(int state_of_charge_readings_length, int soc_minimum, int soc_maximum)
       {
-             if (state_of_charge_readings_length>0)
-            {
-              List<int> soc_samples = new List<int>();
+          List<int> soc_samples = new List<int>();
+            if (state_of_charge_readings_length>0)
+            {              
               for (int temp_index = 0; temp_index < state_of_charge_readings_length; temp_index++)
                   soc_samples.Add(GenerateRandomNumber(soc_minimum, soc_maximum));
               return soc_samples;
-             }
-             else
-             {  
+            }
+            else
+            {  
                soc_samples=null;
-                return soc_samples;
-             }  
+               return soc_samples;
+            }  
       }
   }  
 }
