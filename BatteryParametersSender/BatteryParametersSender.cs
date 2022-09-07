@@ -15,7 +15,7 @@ namespace BatteryParametersSender
                 
       public static bool GatherBatteryTelemetryDetails()
       {           
-            bool isDataPrintable = 0;
+            bool isDataPrintable = false;
             List<int> temperature_data = new List<int>();
             List<int> soc_data = new List<int>();
             temperature_data = GenerateTemperatures(READING_MAX, TEMP_MIN, TEMP_MAX);
