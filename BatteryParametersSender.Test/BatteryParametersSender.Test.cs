@@ -10,7 +10,7 @@ namespace BatteryParametersSender.Test
     [Fact]
     public void TestBatteryParams()
     {
-      Assert.True(BatteryDataSender.DisplayDataToConsole()==True);      
+      Assert.True(BatteryDataSender.DisplayDataToConsole()==1);      
     }
     
   }
