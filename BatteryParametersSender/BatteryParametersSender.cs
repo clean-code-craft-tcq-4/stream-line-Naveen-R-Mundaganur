@@ -19,16 +19,27 @@ namespace BatteryParametersSender
             List<int> temperature_data = new List<int>();
             List<int> soc_data = new List<int>();
             temperature_data = GenerateTemperatures(READING_MAX, TEMP_MIN, TEMP_MAX);
-            soc_data = GenerateStateOfCharge(READING_MAX, SOC_MIN, SOC_MAX);            
-            isDataPrintable=DisplayBatteryTelemetryDetails(temperature_data, soc_data);                       
+            soc_data = GenerateStateOfCharge(READING_MAX, SOC_MIN, SOC_MAX);
+            if(IsBatteryParametersEmpty)              
+            {
+              isDataPrintable=DisplayBatteryTelemetryDetails(temperature_data, soc_data);  
+            }
             return isDataPrintable;
       }
       
-      public static bool DisplayBatteryTelemetryDetails(List<int> temperature_data, List<int> soc_data)
+      public static bool IsBatteryParametersEmpty(List<int> temperature_data, List<int> soc_data)
       {
-          bool isPrintable = false;
+          bool isbatteryDataAvailable=false
           if(temperature_data!=null && soc_data!=null)
           {
+            isbatteryDataAvailable=true;
+          }          
+            return isbatteryDataAvailable;
+      }
+    
+      public static bool DisplayBatteryTelemetryDetails(List<int> temperature_data, List<int> soc_data)
+      {
+        bool isPrintable = false;
             if (temperature_data.Count == READING_MAX && soc_data.Count == READING_MAX)
             {
                 Console.WriteLine($"Temperature Reading, State Of Charge Reading");
@@ -38,7 +49,6 @@ namespace BatteryParametersSender
                 }
                 isPrintable = true;
             }
-          }          
             return isPrintable;
       }
     
