@@ -13,9 +13,9 @@ namespace BatteryParametersSender
       private const int TEMP_MAX = 150;
       private const int READING_MAX = 50;                
                 
-      public static int GatherBatteryTelemetryDetails()
+      public static bool GatherBatteryTelemetryDetails()
       {           
-            int isDataPrintable = 0;
+            bool isDataPrintable = 0;
             List<int> temperature_data = new List<int>();
             List<int> soc_data = new List<int>();
             temperature_data = GenerateTemperatures(READING_MAX, TEMP_MIN, TEMP_MAX);
@@ -31,7 +31,9 @@ namespace BatteryParametersSender
             {
                 Console.WriteLine($"Temperature Reading, State Of Charge Reading");
                 for (int index = 0; index < READING_MAX; index++)
+                {
                     Console.WriteLine($"{temperature_data[index].ToString()}, {soc_data[index].ToString()}");
+                }
                 isPrintable = true;
             }
             return isPrintable;
