@@ -19,15 +19,8 @@ namespace BatteryParametersSender
             List<int> temperature_data = new List<int>();
             List<int> soc_data = new List<int>();
             temperature_data = GenerateTemperatures(READING_MAX, TEMP_MIN, TEMP_MAX);
-            soc_data = GenerateStateOfCharge(READING_MAX, SOC_MIN, SOC_MAX);
-            if(temperature_data!=null && soc_data!=null)         
-            {
-              isDataPrintable=DisplayBatteryTelemetryDetails(temperature_data, soc_data);
-            }
-            else
-            {
-              isDataPrintable=false;
-            }
+            soc_data = GenerateStateOfCharge(READING_MAX, SOC_MIN, SOC_MAX);            
+            isDataPrintable=DisplayBatteryTelemetryDetails(temperature_data, soc_data);                       
             return isDataPrintable;
       }
       
@@ -45,11 +38,7 @@ namespace BatteryParametersSender
                 }
                 isPrintable = true;
             }
-          }
-          else
-          {
-            isPrintable=false;
-          }
+          }          
             return isPrintable;
       }
     
