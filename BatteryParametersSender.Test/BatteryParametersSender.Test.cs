@@ -43,15 +43,15 @@ namespace BatteryParametersSender.Test
     {
       List<int> sample_info=new List<int>();
       sample_info=BatteryDataSender.GenerateTemperatures(0,-20,250);
-      Assert.Null(null,sample_info);
+      Assert.Null(sample_info);
     }
     
     [Fact]
     public void ValidateStateOfChargeSampleParametersforZeroLength()
     {
       List<int> sample_info=new List<int>();
-      sample_info=BatteryDataSender.GenerateStateOfCharge(0,10,95);
-      Assert.Null(null,sample_info);
+      sample_info=BatteryDataSender.GenerateStateOfCharge(0,10,95);      
+      Assert.Null(sample_info);
     }        
   }
 }
