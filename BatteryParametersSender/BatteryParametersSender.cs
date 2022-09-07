@@ -55,10 +55,7 @@ namespace BatteryParametersSender
       //This method generates the Random Number for specified Minimum and Maximum range
       public static int GenerateRandomNumber(int minimum_value, int maximum_value)
       {
-            if (minimum_value >= int.MinValue && maximum_value <= int.MaxValue)
-                return _random.Next(minimum_value, maximum_value);
-            else
-                return 0;
+            return _random.Next(minimum_value, maximum_value);           
       }
       
       public static List<int> GenerateTemperatures(int temperature_readings_length, int temperature_minimum, int temperature_maximum)
