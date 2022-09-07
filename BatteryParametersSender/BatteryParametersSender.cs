@@ -29,7 +29,7 @@ namespace BatteryParametersSender
       
       public static bool IsBatteryParametersEmpty(List<int> temperature_data, List<int> soc_data)
       {
-          bool isbatteryDataAvailable=false
+          bool isbatteryDataAvailable=false;
           if(temperature_data!=null && soc_data!=null)
           {
             isbatteryDataAvailable=true;
