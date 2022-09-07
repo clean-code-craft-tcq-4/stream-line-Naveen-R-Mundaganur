@@ -11,7 +11,7 @@ namespace BatteryParametersSender.Test
     public void TestBatteryParams()
     {
       int result=BatteryDataSender.DisplayDataToConsole();
-      Assert.Equal(result,1);     
+      Assert.Equal(1,result);     
     }
     
   }
