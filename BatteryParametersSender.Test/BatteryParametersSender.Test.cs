@@ -36,15 +36,24 @@ namespace BatteryParametersSender.Test
     {
       List<int> temp_range=new List<int>();
       List<int> soc_range=new List<int>(){2,4,6,8};
-      //bool result=BatteryDataSender.DisplayBatteryTelemetryDetails(temp_range,soc_range);
+      bool result=BatteryDataSender.IsBatteryParametersEmpty(temp_range,soc_range);
       Assert.False(result); 
     }
-     [Fact]
-    public void GetBatteryParametersforZeroLength()
-    {
-      
-    }
-      
     
+     [Fact]
+    public void ValidateTemperatureSampleParametersforZeroLength()
+    {
+      List<int> sample_info=new List<int>();
+      sample_info=ender.GenerateTemperatures(0,-20,250);
+      Assert.Null(null,sample_info);
+    }
+    
+    [Fact]
+    public void ValidateStateOfChargeSampleParametersforZeroLength()
+    {.
+      List<int> sample_info=new List<int>();
+      sample_info=ender.GenerateStateOfCharge(0,10,95);
+      Assert.Null(null,sample_info);
+    }    
   }
 }
