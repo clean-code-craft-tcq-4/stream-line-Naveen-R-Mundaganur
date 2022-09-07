@@ -28,6 +28,7 @@ namespace BatteryParametersSender
             }
             return isDataPrintable;
       }
+    
       //Check the battery parameters are null
       public static bool IsBatteryParametersEmpty(List<int> temperature_data, List<int> soc_data)
       {
@@ -38,6 +39,7 @@ namespace BatteryParametersSender
           }          
             return isbatteryDataAvailable;
       }
+    
       //Display the Battery Parameters to Console Output
       public static bool DisplayBatteryTelemetryDetails(List<int> temperature_data, List<int> soc_data)
       {
@@ -45,7 +47,7 @@ namespace BatteryParametersSender
             if (temperature_data.Count == MAX_READING && soc_data.Count == MAX_READING)
             {
                 Console.WriteLine($"Temperature Reading, State Of Charge Reading");
-                for (int index = 0; index < READING_MAX; index++)
+                for (int index = 0; index < MAX_READING; index++)
                 {
                     Console.WriteLine($"{temperature_data[index].ToString()}, {soc_data[index].ToString()}");
                 }
@@ -76,8 +78,7 @@ namespace BatteryParametersSender
             {
               battery_parameter_samples=null;
               return battery_parameter_samples;
-            }
-            
+            }            
       } 
   }  
 }
