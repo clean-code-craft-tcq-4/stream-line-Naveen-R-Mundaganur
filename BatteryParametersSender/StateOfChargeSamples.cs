@@ -9,7 +9,7 @@ namespace BatteryParametersSender
     {
             List<int> soc_data = new List<int>();
             for (int temp_index = 0; temp_index < state_of_charge_readings_length; temp_index++)
-                soc_data.Add(Program.RandomNumber(soc_minimum, soc_maximum));
+                soc_data.Add(BatteryDataSender.RandomNumber(soc_minimum, soc_maximum));
             return soc_data;
     }
   }
