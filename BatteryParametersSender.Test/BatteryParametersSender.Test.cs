@@ -48,11 +48,10 @@ namespace BatteryParametersSender.Test
     
     [Fact]
     public void ValidateStateOfChargeSampleParametersforZeroLength()
-    {.
+    {
       List<int> sample_info=new List<int>();
       sample_info=BatteryDataSender.GenerateStateOfCharge(0,10,95);
       Assert.Null(null,sample_info);
-    }    
-    
+    }        
   }
 }
