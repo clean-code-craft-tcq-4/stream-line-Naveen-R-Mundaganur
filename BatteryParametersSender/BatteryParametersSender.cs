@@ -16,8 +16,12 @@ namespace BatteryParametersSender
       private List<int> temperature_data=null;
       private List<int> soc_data = null;
       private bool isDataPrintable = false;
-      TemperatureData temp_info=new TemperatureData();
-      StateOfCharge soc=new StateOfCharge();
+      
+      public BatteryDataSender()
+      {        
+        TemperatureData temp_info=new TemperatureData();
+        StateOfCharge soc=new StateOfCharge();
+      }
       
       public static bool DisplayDataToConsole()
       {            
