@@ -12,7 +12,7 @@ namespace BatteryParametersSender
       private const int SOC_MAX = 80;
       private const int TEMP_MIN = -50;
       private const int TEMP_MAX = 200;
-      private const int MAX_READING = 50;                
+      private const int MAX_READING = 100;                
       
       //Methods collects the battery system parameters and process for Display
       public static bool GatherBatteryTelemetryDetails()
